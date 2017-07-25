@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Panel, Button } from 'react-bootstrap'
 import './AddGreeter.css';
 
 class AddGreeter extends Component {
@@ -17,11 +18,11 @@ class AddGreeter extends Component {
     }
     render() {
         return (
-            <div className="AddGreeter">
+            <Panel>
                 <input type="text" onChange={this.handleUpdate} value={this.state.greetingName}/>
                 &nbsp;&nbsp;
-                <button onClick={this.addGreeting}>Add</button>
-            </div>
+                <Button bsStyle="primary" onClick={this.addGreeting}>Add</Button>
+            </Panel>
         )
     }
 }

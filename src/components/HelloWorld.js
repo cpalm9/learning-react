@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Panel, DropdownButton, MenuItem  } from 'react-bootstrap'
 import './HelloWorld.css';
 
 class HelloWorld extends Component {
@@ -24,15 +25,14 @@ class HelloWorld extends Component {
 
     render() {
         return (
-            <div className="HelloWorld">
-                {this.state.greeting} {this.props.name}!
-                <br/>
-                <button onClick={this.frenchify}>Frenchify!</button>
-                <br/>
-                <button onClick={this.reEnglish}>English!</button>
-                <br/>
-                <button onClick={this.removeGreeting}>Delete</button>
-            </div>
+            <Panel>
+                <h2>{this.state.greeting} {this.props.name}!</h2>
+                <DropdownButton title="Edit Person">
+                    <MenuItem onClick={this.frenchify}>Frenchify!</MenuItem>
+                    <MenuItem onClick={this.reEnglish}>English!</MenuItem>
+                    <MenuItem onClick={this.removeGreeting}>Delete</MenuItem>
+                </DropdownButton>
+            </Panel>
         )
     }
 }
