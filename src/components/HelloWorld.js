@@ -26,7 +26,7 @@ class HelloWorld extends Component {
     render() {
         return (
             <Panel>
-                <h2>{this.state.greeting} {this.props.name}!</h2>
+                <h3>{this.state.greeting} {this.props.name}!</h3>
                 <DropdownButton title="Edit Person">
                     <MenuItem onClick={this.frenchify}>Frenchify!</MenuItem>
                     <MenuItem onClick={this.reEnglish}>English!</MenuItem>

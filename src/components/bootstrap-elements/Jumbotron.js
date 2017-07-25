@@ -6,7 +6,7 @@ class Jumbo extends Component {
     render() {
         return (
             <Jumbotron>
-                <h1>This is Chris's Cool React App!</h1>
+                <h2>Wow! What a cool app!</h2>
             </Jumbotron>
         );
     }
