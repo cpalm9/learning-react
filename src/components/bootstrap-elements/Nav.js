@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar } from 'react-bootstrap';
+import './Nav.css'
 
 class Nav extends Component {
     render() {
@@ -7,7 +8,7 @@ class Nav extends Component {
         <Navbar inverse fixedTop>
           <Navbar.Header>
             <Navbar.Brand>
-              Chris's React App
+              Time Logger
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>

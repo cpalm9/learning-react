@@ -1,37 +1,37 @@
 import React, { Component } from 'react';
 import HelloWorld from './HelloWorld';
-import AddGreeter from './AddGreeter';
+import AddEvent from './AddEvent';
 
 class HelloWorldList extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { greetings: ['Chris', 'Jimmy', 'Sally']};
-        this.addGreeting = this.addGreeting.bind(this);
+        this.state = { events: [] };
+        this.AddEvent = this.AddEvent.bind(this);
         this.removeGreeting = this.removeGreeting.bind(this);
     }
 
     renderGreetings() {
-        return this.state.greetings.map(name => (
+        return this.state.events.map(name => (
             <HelloWorld key={name} name={name} removeGreeting={this.removeGreeting}/>
         ));
     }
 
-    addGreeting(newName) {
-        this.setState({ greetings: [...this.state.greetings, newName] });
+    AddEvent(newHour,newDesc) {
+        this.setState({ events: [newHour, newDesc] });
     }
 
     removeGreeting(removeName) {
-        const filteredGreetings = this.state.greetings.filter(name => {
+        const filteredGreetings = this.state.events.filter(name => {
             return name !== removeName;
         });
-        this.setState({ greetings: filteredGreetings });
+        this.setState({ events: filteredGreetings });
     }
 
     render() {
         return (
             <div className="HelloWorldList">
-                <AddGreeter addGreeting={this.addGreeting}/>
+                <AddEvent AddEvent={this.AddEvent}/>
                 {this.renderGreetings()}
             </div>
         )
